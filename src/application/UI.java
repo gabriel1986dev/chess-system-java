@@ -6,7 +6,6 @@ import chess.ChessPosition;
 import chess.Color;
 
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class UI {
@@ -52,7 +51,10 @@ public class UI {
         printCapturedPieces(captured);
         System.out.println();
         System.out.println("Turn : " + chessMatch.getTurn());
-        System.out.println("Waiting player: " + chessMatch.getCurruentPlayer());
+        System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
+        if (chessMatch.getCheck()) {
+            System.out.println("CKECK!");
+        }
     }
 
     public static void printBoard(ChessPiece[][] pieces) {
